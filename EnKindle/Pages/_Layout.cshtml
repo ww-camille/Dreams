@@ -1,0 +1,116 @@
+﻿
+@{
+
+    var meta_title = "Inspirational Line " + ViewBag.meta_title;
+    var meta_desc = "Inspirational Card. Inspire your frineds" + ViewBag.meta_desc;
+    var meta_keyword = "e-greeting, e-Greeting, E-greeting, E-Greeting, E-GREETING, egreeting, eGreeting, Egreeting,ndesign, digital card, " + ViewBag.meta_keyword;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>@meta_title</title>
+    <meta name="description" content="@meta_desc">
+    <meta name="keywords" content="@meta_keyword">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="copyright" content="2019" />
+    <meta name="designer" content="Meghann Herron" />
+    <!-- BOC: FACEBOOK -->
+    <link rel="canonical" href="" />
+    <meta property="fb:app_id" content="" />
+    <meta property="og:title" content="@meta_title" />
+    <meta property="og:type" content="article" />
+    @*<meta property="og:image" content="@meta_image" />
+        <meta property="og:url" content="@meta_url" />*@
+    <meta property="og:description" content="@meta_desc" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="" />
+    <title>@ViewBag.meta_title</title>
+    <!-- BOC: TWITTER -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="@meta_title" />
+    <meta name="twitter:description" content="@meta_desc" />
+    @*<meta name="twitter:image" content="@meta_image" />*@
+    <!-- FAVICON  -->
+    <link rel="icon" href="~/images/orangestar.jpg" type="image/x-icon" />
+    <!-- GOOGLE FONT LIBRARY -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!-- FONTAWESOME LIBRARY ..... Need to check if this is working... tried to bring it in through NUGET maybe bower since clinet side -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- BOOTSTRAP LIBRARY -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- ANIMATE CSS LIBRARY CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" rel="stylesheet" />
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+
+    <!-- BEGIN: BODY HTML -->
+    @*<div class="container-fluid">*@
+        <div class="Message">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-6 col-lg-6 col-lg-offset-6">
+
+                @RenderBody()
+                @*<div class="col-lg-4 d-flex justify-content-center">*@
+                @*@Html.Partial("_Form", (EnKindle.Model.Greetings)ViewBag.Greetings)*@
+            </div>
+        </div>
+
+                <!-- BEGIN: MUSIC SECTION... I also have it on the Index... Maybe have it only on the read and/or Preview... If so change control color... it is to dark... very hard to see -->
+            @*</div>*@
+
+            @*<div data-video="h3OpppJvbSs"
+                       data-autoplay="1"
+                       data-loop="1"
+                       id="youtube-audio"
+                       class="youtube-audio">
+            </div>
+            <script src="https://www.youtube.com/iframe_api"></script>
+            <script src="https://cdn.rawgit.com/labnol/files/master/yt.js"></script>*@
+            <!-- END: MUSIC SECTION -->
+
+
+            <footer>
+                <div class="footer">
+                    &copy; @DateTime.Now.Year - @ViewBag.theme Greeting. All rights reserved.
+                </div>
+            </footer>
+
+
+            <!-- END: BODY HTML -->
+            <!-- JAVASCRIPT LIBRARY -->
+            <script src="~/js/site.js"></script>
+
+
+            <!-- JQUERY LIBRARY -->
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <!-- BOOTSTRAP LIBRARY POPPER popper yet how do I get the popper from my NuGet RIGHT CLICK OPEN IT WITH FILE EXPLORER SELECT ALL COPY AND PASTE IT IN THE APPROPRIATE FOLDER ...WWWROOT/LIB-->
+            <script src="~/lib/popper.js/dist/popper.min.js"></script>
+
+            <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+            @* Currently...using the minified version of it noted above ... <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>*@
+
+
+            <!-- JQUERY VALIDATION -->
+            <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+            <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+            <!-- BEGIN: TEXTAREA AUTOSIZE -->
+            <script src="~/lib/textarea-autosize/dist/jquery.textarea_autosize.js"></script>
+            <script>
+                $('textarea').textareaAutoSize();
+            </script>
+            <!-- END: TEXTAREA AUTOSIZE -->
+            <script src="~/lib/textareacountdown.js"></script>
+
+
+            <!-- RECAPTCHA SCRIPT -->
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+            @RenderSection("Scripts", required: false)
+</body>
+</html>

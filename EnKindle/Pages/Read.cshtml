@@ -1,0 +1,25 @@
+﻿@page "{ID?}"
+@model ReadModel
+@{
+    ViewData["Title"] = "Read";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@Model.Message</h3>
+<p>Post users message here.</p>
+
+@*<h1>Here is your greeting from @Model.BridgeGreetings.Sendersemail</h1>*@
+@*<h3>@Model.BridgeGreetings.Mesgfromuser</h3>*@
+
+<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-6 col-lg-6 col-lg-offset-6">
+    <div class="card">
+        <div class="card-title">
+            <h1>
+                Here is your egreeting... <br />
+                1.get the right syntax to bring in model/info info from database<br />
+                2.remove background on card
+            </h1>
+
+            <a href="/" class="btn btn-outline-light btn-block">Send some Inspiration!!</a>
+        </div>
+    </div>
+</div>

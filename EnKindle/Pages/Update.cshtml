@@ -1,0 +1,22 @@
+﻿@page "{ID?}"
+@model UpdateModel
+
+@{
+    ViewBag.meta_title = "Update";
+}
+
+<h2>@ViewBag.meta_title</h2>
+
+<p>Bringing back the form so the user can update it</p>
+
+<div class="card-body">
+    <form method="post">
+        <input type="hidden" asp-for="@Model._Greetings.ID" />
+            <partial name="_Form" model="Model._Greetings" />
+              
+            <div class="form-group">
+                <a href="/update?id=@Model._Greetings.ID" class="btn btn-outline-light btn-block"> SAVE CHANGES </a>
+            </div>
+        </form>
+</div>
+

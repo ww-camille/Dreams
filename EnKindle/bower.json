@@ -1,0 +1,8 @@
+{
+  "name": "myproject",
+  "dependencies": {
+    "bootstrap": "v4.3.1",
+    "textarea-autosize": "v0.4.2",
+    "popper.js": "v1.15.0"
+  }
+}

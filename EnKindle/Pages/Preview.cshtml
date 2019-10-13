@@ -1,0 +1,32 @@
+﻿@page "{ID?}"
+@model PreviewModel
+@{
+    ViewData["Title"] = "Preview";
+}
+
+<h2>@ViewData["Title"]</h2>
+@*<h3>@Model.Message</h3>*@
+
+@*<partial name="_Preview" model=" EnKindle.Model.Greetings()" />*@
+
+
+@*@Html.Partial("_Preview", Model.BridgeGreetings)*@
+<a href="/" class="btn btn-primary"> X </a>
+<h1> Is this thing working? I need to bring the info that was saved in the index over and pull it from the database to show here</h1>
+
+
+@*EDIT & SEND BUTTONS START *@
+<form method="post">
+    <input type="hidden" asp-for="@Model._Greetings.ID" />
+   
+    <h1>Here is your message from @Model._Greetings.Sendersemail</h1>
+    <h3>@Model._Greetings.Mesgfromuser</h3>
+
+
+    <div class="form-group">
+        <a href="/update?id=@Model._Greetings.ID" class="btn btn-outline-light btn-block"> Edit </a>
+        
+        <input type="submit" class="btn btn-outline-light btn-block" value="Send It" />
+    </div>
+</form>
+@*EDIT & SEND BUTTONS END *@
